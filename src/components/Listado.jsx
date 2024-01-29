@@ -2,12 +2,15 @@
 import { Table } from "react-bootstrap";
 import {FaTrashAlt } from 'react-icons/fa';
 
-const Listado = ({setColaboradores, datoFiltrado, setDatoFiltrado}) =>{
+const Listado = ({colaboradores, setColaboradores,datoFiltrado, setDatoFiltrado}) =>{
     const handleDelete = (id) => {
+        
+
         const actualizaColaboradores = datoFiltrado.filter((colaborador) => colaborador.id !== id);
-        setColaboradores(actualizaColaboradores)
         setDatoFiltrado(actualizaColaboradores)
-        alert('Esta Borrando este Colaborador');
+
+        
+        
       };
        
     return(

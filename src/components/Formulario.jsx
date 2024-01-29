@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap"
 import Alerta from "./Alerta";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const Formulario =({input,setInput,alerta,setAlerta,setDatoFiltrado,datoFiltrado}) =>{
@@ -27,10 +28,13 @@ const Formulario =({input,setInput,alerta,setAlerta,setDatoFiltrado,datoFiltrado
             return; 
        
         } else {
+
+            const nuevoColaborador = {...input, id: uuidv4()}
+
             setAlerta({tipo:'primary', mensaje:'Formulario Enviado'}) 
 
          
-       setDatoFiltrado([...datoFiltrado, input])
+       setDatoFiltrado([...datoFiltrado, nuevoColaborador])
        setInput(estadoInicial);
         }
         
